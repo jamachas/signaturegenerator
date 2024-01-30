@@ -1,0 +1,321 @@
+ <!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Generador de firmas PersonalSoft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,800;1,300;1,800&display=swap" rel="stylesheet">
+<link href="https://db.onlinewebfonts.com/c/6e2da64b88f7e60cda1df63cb63cc8f2?family=Canela+Deck" rel="stylesheet" type="text/css"/>
+<link href="https://bulma-divider.netlify.app//css/bulma-divider.min.css" rel="stylesheet"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <div class="heading">
+      <h1 class="title is-size-1">Genera tu firma de correo aquí</h1>
+      <div class="content is-size-7 has-text-weight-medium">
+        <bl>
+          <h1 class="title is-size-1">Paso 1</h1>
+          <li>Rellena todos los campos<b>*</b></li>
+          <li>Selecciona el teléfono según tu país</li>
+        </bl>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h3 class="title">Tu información</h3>
+        <form id="form">
+          <div class="field">
+            <label class="label" for="name">Nombre y apellido *</label>
+            <div class="field has-addons has-addons-centered">
+              <p class="control is-expanded has-icons-left">
+                <input id="name" class="input" placeholder="Nombres y apellidos" required>
+                <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+              </p>
+            </div>
+          </div>
+          <div class="field" style="display: none;">
+            <label class="label" for="checkPronouns">Pronouns</label>
+            <div class="field has-addons has-addons-centered">
+              <p class="control">
+                <label class="button" title="Show pronouns">
+                  <input id="checkPronouns" type="checkbox">
+                </label>
+              </p>
+              <p class="control is-expanded has-icons-left">
+                <input id="pronouns" class="input" placeholder="Example: she/her, he/him, ia, they/them, ze/hir" disabled>
+                <span class="icon is-small is-left"><i class="fas fa-mars-and-venus-burst"></i></span>
+              </p>
+            </div>
+          </div>
+          <div class="field" style="display: none;">
+            <label class="label" for="checkQuals">Qualifications</label>
+            <div class="field has-addons has-addons-centered">
+              <p class="control">
+                <label class="button" title="Show qualifications">
+                  <input id="checkQuals" type="checkbox">
+                </label>
+              </p>
+              <p class="control is-expanded has-icons-left">
+                <input id="quals" class="input" placeholder="Example: PhD IT, MSE, MEM" disabled>
+                <span class="icon is-small is-left"><i class="fas fa-graduation-cap"></i></span>
+              </p>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label" for="jobtitle">Cargo *</label>
+            <div class="field has-addons has-addons-centered">
+              <p class="control is-expanded has-icons-left">
+                <input id="jobtitle" class="input" placeholder="Ejemplo: Intern" required>
+                <span class="icon is-small is-left"><i class="fas fa-id-badge"></i></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="field" style="display: none;">
+            <label class="label" style="display: none;" for="department">Job line 2</label>
+            <div class="field has-addons has-addons-centered">
+              <p class="control">
+                <label class="button" title="Use 2nd job line">
+                  <input id="check2ndJob" type="checkbox">
+                </label>
+              </p>
+              <p class="control is-expanded has-icons-left">
+                <input id="department" class="input" placeholder="This is my team" disabled>
+                <span class="icon is-small is-left"><i class="fas fa-user-group"></i></span>
+                <span class="help">
+                  Keep this line disabled if you don't require it.
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div class="field is-grouped"  style="display: none;">
+            <div class="field mr-4">
+              <label class="label" for="checkPhone">Movíl *</label>
+              <div class="field has-addons has-addons-centered">
+                <p class="control">
+                  <label class="button" title="Show Mobile number">
+                    <input id="checkPhone" type="checkbox" checked>
+                  </label>
+                </p>
+                <p class="control is-expanded has-icons-left">
+                  <input type="tel" id="phone" class="input" placeholder="+57 xx xxx xxxx">
+                  <span class="icon is-small is-left"><i class="fas fa-mobile"></i></span>
+                </p>
+              </div>
+            </div>
+
+            <div class="field" style="display: none;">
+              <label class="label" for="checkDDI">DDI</label>
+              <div class="field has-addons has-addons-centered">
+                <p class="control">
+                  <label class="button" title="Show DDI number">
+                    <input id="checkDDI" type="checkbox">
+                  </label>
+                </p>
+                <p class="control is-expanded has-icons-left">
+                  <input type="tel" id="ddi" class="input" placeholder="+64 4 xxx xxxx" disabled>
+                  <span class="icon is-small is-left"><i class="fas fa-phone"></i></span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="field" style="display: none;">
+            <label class="label" for="checkTeams">Teams</label>
+            <div class="field">
+              <p class="control">
+                <label class="checkbox" title="Show a 'Call me on Teams' link">
+                  <input id="checkTeams" type="checkbox" checked>
+                  Show a link to directly call you through Teams
+                </label>
+              </p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label" for="email">Email *</label>
+            <div class="field has-addons has-addons-centered">
+              <p class="control is-expanded has-icons-left">
+                <input type="email" id="email" class="input" placeholder="ejemplo@personalsoft.com" required>
+                <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="field" style="display: none;">
+            <label class="label" for="checkAdditional">Additional Info</label>
+            <div class="field has-addons has-addons-centered">
+              <p class="control">
+                <label class="button" title="Enable Additional Information">
+                  <input id="checkAdditional" type="checkbox">
+                </label>
+              </p>
+              <p class="control is-expanded">
+                <input id="additional" class="input" placeholder="Example: Campus Locations, Hours: 9am–5pm, Mon–Fri" disabled>
+                <span class="help">
+                  You can make text bold by typing &lt;b&gt; before what you want bold, and &lt;/b&gt; after it.<br>
+                  You can make text italic by typing &lt;i&gt; before what you want italicised, and &lt;/i&gt; after it.
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label" for="checkPhone">Teléfono *</label>
+            <div class="field has-addons has-addons-centered">
+              <div class="control is-expanded has-icons-left">
+                <div class="select">
+                  <select id="image" class="input" name="Banners" placeholder="none" title="telefonos">
+                    <option selected value="none">Selecciona tu país</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="panama">Panamá</option>
+                    <option value="usa">USA</option>
+                    <option value="salvador">El Salvador</option>
+                    <option value="dominicana">República Dominicana</option>
+                    <!-- <option value="emerge">E/MERGE 2023</option> -->
+                  </select>
+                </div>
+                <div class="icon is-small is-left">
+                  <i class="fas fa-image"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="divider" style="display: none;">Team Specific</div>
+          </div>
+
+          <div class="field is-grouped" style="display: none;">
+            <div class="field mr-4">
+              <label class="label" for="checkICT">ICT Services</label>
+              <div class="field">
+                <p class="control">
+                  <label class="checkbox" title="Enable ICT Services Banner">
+                    <input id="checkICT" type="checkbox">
+                    For ICT Services use only
+                  </label>
+                </p>
+              </div>
+            </div>
+
+            <div class="field" style="display: none;">
+              <label class="label" for="checkTPI">International</label>
+              <div class="field">
+                <p class="control">
+                  <label class="checkbox" title="Enable International Te Pūkenga logo">
+                    <input id="checkTPI" type="checkbox">
+                    For International Department use only
+                  </label>
+                  <!-- <span class="help">
+                    <b>Te Pūkenga requires we use "Te Pūkenga New Zealand" internationally only</b>.
+                  </span> -->
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div class="column">
+        <h3 class="title">Muestra en vivo</h3>
+        <article class="message is-primary">
+          <div class="message-body" id="signature_container">
+
+            <div>
+              <table style="background-color: rgb(255, 255, 255); color: rgb(34, 34, 34); min-width: 500px;" border="0"  cellspacing="0" cellpadding="0">
+              <tbody>
+              <tr>
+              <td style="width: 498px;">
+              <table border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+              <tr>
+              <td valign="top" width="100">​<img src="https://personalsoft.com/images/iconos/Firmas/Logo_firma.png"></td>
+              <td valign="top" style="border-right:4px solid rgb(41, 171, 226)">
+              <table style="color: rgb(128, 128, 128); min-width: 250px; height: 149.344px;" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+              <tr style="height: 25.3906px;">
+              <td style="width: 99.3057%; height: 25.3906px;">
+              <div class="name" id="editName" style="color: rgb(0, 113, 188); font-weight: 700; text-transform: uppercase;"><img src="https://www.personalsoft.com/images/iconos/Firmas/sp.jpg" height="20px"><strong>Nombres</strong></div>
+              </td>
+              </tr>
+              <tr style="height: 25.3906px;">
+              <td style="width: 99.3057%; height: 25.3906px;">
+              <div class="jobtitle" style="color: rgb(41, 171, 226);font-weight: 600;"><img src="https://www.personalsoft.com/images/iconos/Firmas/sp.jpg" height="20px">Cargo  </div>
+              </td>
+              </tr>
+              <tr style="height: 25.3906px;">
+              <td style="width: 99.3057%; height: 25.3906px;"><span class="email" id="email" style="color: rgb(0, 51, 102);font-weight: 400;"><img src="https://www.personalsoft.com/images/iconos/Firmas/sp.jpg" height="20px"><a style="color: rgb(17, 85, 204);" href="" target="_blank" rel="noopener">ejemplo@personalsoft.com</a></span></td>
+              </tr>
+              <tr style="height: 25.3906px;">
+              <td style="width: 99.3057%; height: 25.3906px;"><span style="color: rgb(0, 51, 102);"><img src="https://www.personalsoft.com/images/iconos/Firmas/sp.jpg" height="20px">Móvil: <span id="imageWrap"> xxx xxxx</span></span></td>
+              </tr>
+              <tr style="height: 25.3906px;">
+              <td style="width: 99.3057%; height: 25.3906px;"><span style="color: rgb(0, 51, 102);"><img src="https://www.personalsoft.com/images/iconos/Firmas/sp.jpg" height="20px"><a style="color: rgb(0, 51, 102);" href="http://www.personalsoft.com." target="_blank" rel="noopener">personalsoft.com</a></span></td>
+              </tr>
+              </tbody>
+              </table>
+              </td>
+              <td valign="middle">
+              <table border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+              <tr>
+              <td><a style="color: rgb(17, 85, 204);" href="https://www.facebook.com/PersonalSoft-SAS-390892204311428" target="_blank" rel="noopener"><img src="https://www.personalsoft.com/images/iconos/Firmas/fa.png" alt="" width="25"></a></td>
+              </tr>
+              <tr>
+              <td> <a style="color: rgb(17, 85, 204);" href="https://twitter.com/Personal_Soft" target="_blank" rel="noopener"><img src="https://personalsoft.com/images/iconos/Firmas/tw.png"></a>​</td>
+              </tr>
+              <tr>
+              <td><a style="color: rgb(17, 85, 204);" href="https://www.linkedin.com/company/687823" target="_blank" rel="noopener"><img src="https://www.personalsoft.com/images/iconos/Firmas/in.png" alt="" width="25"></a></td>
+              </tr>
+              <tr>
+              <td><a style="color: rgb(17, 85, 204);" href="https://www.instagram.com/personalsoftlatam" target="_blank" rel="noopener"><img src="https://www.personalsoft.com/images/iconos/Firmas/am.png" alt="" width="25"></a></td>
+              </tr>
+              <tr>
+              <td><a style="color: rgb(17, 85, 204);" href="https://www.youtube.com/channel/UC00Zp7EeL8vP79vKzUIWT8Q" target="_blank" rel="noopener"><img src="https://www.personalsoft.com/images/iconos/Firmas/yt.png" alt="" width="25"></a></td>
+              </tr>
+              <tr>
+              <td><a style="color: rgb(17, 85, 204);" href="https://www.tiktok.com/@personalsoftglobal" target="_blank" rel="noopener"><img src="https://www.personalsoft.com/images/iconos/Firmas/tok.png" alt="" width="25"></a></td>
+              </tr>
+              </tbody>
+              </table>
+              </td>
+              </tr>
+              </tbody>
+              </table>
+              </td>
+              </tr>
+              </tbody>
+              </table>
+              <div style="background-color: rgb(255, 255, 255); color: rgb(34, 34, 34);"><img src="https://personalsoft.com/images/iconos/Firmas/Firma.gif" data-os="https://lh3.googleusercontent.com/d/1E3Tr133IBTtZa4so447FSuT8fFR3JGt5"></div>
+              </div>  
+        </article>
+        <h1 class="title is-size-1">Paso 2</h1>
+        <h3 class="title">Copiar firma</h3>
+        <p>Presiona en el siguiente botón y copiarás la firma:</p>
+        <div class="controls"><br>
+          <button class="button is-primary" data-select data-signature="signature">
+            <span class="icon is-small"><i class="fas fa-clipboard"></i></span>
+            <span>Copiar firma</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
